@@ -25,15 +25,15 @@
 	<i class="on-off fa-solid fa-toggle-off"></i>
 
 	<%@include file=".//includes//sideNav.jsp"%>
-	
-		<div class="container">
+
+	<div class="container">
 		<nav>
 			<div class="navLeft">
 				<div class="icon" id="profile-cont-off">
 					<i class="fa-solid fa-bars"></i>
 				</div>
 				<h2>
-					<a href="index.html">THE STATIONARY HUB </a>
+					<a href="index.html">THE  STATIONARY  HUB </a>
 				</h2>
 			</div>
 			<div class="navMid">
@@ -78,10 +78,10 @@
 			<div class="Backside-card-body">
 				<div class="Backside-card">
 					<div class="Backside-card-Left cursor">
-						<h5 id="pagelocation">THE STATIONARY HUB</h5>
+						<h5 id="pagelocation">THE  STATIONARY  HUB</h5>
 					</div>
 					<div class="Backside-card-Mid cursor">
-						<h1>THE STATIONARY HUB</h1>
+						<h1>THE  STATIONARY  HUB</h1>
 					</div>
 					<div class="Backside-card-Right">
 						<div class="nextproduct">
