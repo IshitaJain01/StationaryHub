@@ -3,13 +3,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.inventory.model.*" %>    
 <div class="profile-cont">
-		<div class="cross">
+	 	<div class="cross">
 			<i class="fa-solid fa-xmark"></i>
 		</div>
-		<div class="profile-box">
-			<h2>please log in</h2>
-		</div>
-
+		<h3>KARTIK JAIN</h3>
+		
+		
+        
 		<div class="navigation">
 			<div>
 				<a href="auth/Login.html" class="item"> <i
@@ -43,7 +43,7 @@
 			    } 
 			    else{
 			     user=(User)session.getAttribute("auth");
-			    uid=user.getUser_id();
+			     uid=user.getUser_id();
 			    }
 			    %>
 				<a class="item" href="ShowOrderItems?id=<%out.print(uid);%>">
@@ -57,7 +57,7 @@
 				<h5>Notifications</h5>
 				</a>
 			</div>
-			<hr>
+			
 			<div>
 
 				<a class="item" href="auth/Login.html"> <i

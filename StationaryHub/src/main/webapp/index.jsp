@@ -1,3 +1,4 @@
+<%@page import="com.inventory.essentials.Hash"%>
 <%@page import="com.inventory.util.DBConnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -7,16 +8,17 @@
 <meta charset="ISO-8859-1">
 
  <script src="/javascripts/fontawesome.js"></script>
+ 
+    
+    <link rel="stylesheet" href=".//stylesheets//Login.css" />
 
-    <link rel="stylesheet" href="stylesheets/universal.css" />
-    <link rel="stylesheet" href="stylesheets/backside.css" />
-    <link rel="stylesheet" href="stylesheets/navbar.css" />
-    <link rel="stylesheet" href="stylesheets/Login.css" />
  
 <title>Login Page</title>
 <%--  <%@include  file="/includes/head.jsp" %>  --%>
+
 </head>
 <body>
+<%@include file="message.jsp" %>
  <i class="on-off fa-solid fa-toggle-off"></i>
     <div class="container">
       <div class="Landing-Screen">

@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.inventory.dao.UserDao;
 import com.inventory.model.User;
@@ -46,8 +47,11 @@ public class UserSignup extends HttpServlet {
 			boolean inserted= udao.userSignup(user);
 			out.print(lname);
 			out.print(inserted);
+			
 			if(inserted)
 			{
+				HttpSession httpSession = request.getSession();
+				httpSession.setAttribute("message", "Signup Successfull");
 				response.sendRedirect("index.jsp");
 			}else {
 				out.print("Not inserted");

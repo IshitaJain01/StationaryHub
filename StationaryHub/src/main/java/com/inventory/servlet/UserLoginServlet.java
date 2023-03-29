@@ -3,6 +3,7 @@ package com.inventory.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,12 +43,13 @@ public class UserLoginServlet extends HttpServlet {
 		try (PrintWriter out = response.getWriter()){
 			String email = request.getParameter("username");
 			String password = request.getParameter("password");
-		//	DBConnection.getConnection();
-			out.print(email+password );
+		
 			UserDao udao = new UserDao();
 			
 			User user= udao.userLogin(email, password);
-		     	   
+		
+			
+		   
 			if(user!=null)
 			{
 				out.print("user login");

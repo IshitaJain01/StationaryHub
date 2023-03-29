@@ -4,7 +4,7 @@
       <i class="fa-solid fa-bars"></i>
     </div>
     <h2>
-      <a href="/">YOUR CHOICE </a>
+      <a href="/">THE STATIONARY HUB</a>
     </h2>
   </div>
   <div class="navMid">
