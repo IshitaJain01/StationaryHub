@@ -1,5 +1,7 @@
 <%@page import="com.inventory.essentials.Hash"%>
 <%@page import="com.inventory.util.DBConnection"%>
+<%@page import="com.inventory.servlet.*"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -46,30 +48,40 @@
               </div>
               <div class="login" style="display: initial">
                 <form action="user-login" method="post">
-                  <input type="text" placeholder="EMAIL" name="username" />
+                  <input type="text" required placeholder="EMAIL" name="username" />
                   <input
-                    type="password"
+                    type="password" required
                     placeholder="PASSWORD"
                     name="password"
                   />
                   <button type="submit">Log in</button>
+                  <a href="forgot.jsp"><u>Forgot Password</u></a>
                 </form>
               </div>
               <div class="signup" style="display: none;">
-                <form action="Sign-up" method="post">
-                  <input type="text" placeholder="FIRST NAME" name="fname" />
-                   <input type="text" placeholder="LAST NAME" name="lname" />
-                  <input type="text" placeholder="EMAIL" name="email" />
-                  <input type="number" placeholder="PHONE NO." name="phnumber" />
-                   <input type="text" placeholder="ADDRESS" name="address" />
+                <form action="verify.jsp" method="post">
+                  <input type="text" required placeholder="FIRST NAME" name="fname" />
+                   <input type="text" required placeholder="LAST NAME" name="lname" />
+                  <input type="text" required placeholder="EMAIL" name="email" />
+                  <input type="number" required placeholder="PHONE NO." name="phnumber" />
+                   <input type="text" required placeholder="ADDRESS" name="address" />
                   <input
-                    type="password"
+                    type="password" required
                     placeholder="PASSWORD"
                     name="password"
                   />
+                  <%
+                  SendEmail se=new SendEmail();
+                  %>
+                  
                   <button type="submit">Sign Up</button>
-                </form>
-              </div>
+                 
+                 
+                  
+               </form>
+              
+              
+               </div>
               <div class="icon-cont">
                 <a href="/auth/google" class="icon">
                   <h3>Google</h3>

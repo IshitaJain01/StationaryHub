@@ -10,6 +10,7 @@ public class User {
 	private long user_contact;
 	private String user_address;
 	private String user_password;
+	private String user_status;
 	
 	
 	
@@ -23,7 +24,7 @@ public class User {
    
 
 	public User(String user_firstname, String user_lastname, String user_email, long user_contact, String user_address,
-			String user_password) {
+			String user_password,String user_status) {
 		super();
 		this.user_firstname = user_firstname;
 		this.user_lastname = user_lastname;
@@ -31,13 +32,14 @@ public class User {
 		this.user_contact = user_contact;
 		this.user_address = user_address;
 		this.user_password = user_password;
+		this.user_status = user_status;
 	}
 
 
 
 
 	public User(int user_id, String user_firstname, String user_lastname, String user_email, long user_contact,
-			String user_address, String user_password) {
+			String user_address, String user_password,String user_status) {
 		super();
 		this.user_id = user_id;
 		this.user_firstname = user_firstname;
@@ -46,8 +48,13 @@ public class User {
 		this.user_contact = user_contact;
 		this.user_address = user_address;
 		this.user_password = user_password;
+		this.user_status = user_status;
 	}
 
+
+
+
+	
 
 
 
@@ -145,6 +152,18 @@ public class User {
 	public void setUser_password(String user_password) {
 		this.user_password = user_password;
 	}
+   
+	
+	public String getUser_status() {
+		return user_status;
+	}
+	 public void setUser_status(String user_status) {
+		 this.user_status= user_status;
+	 }
+
+
+
+	
 
 
 
@@ -153,7 +172,7 @@ public class User {
 	public String toString() {
 		return "User [user_id=" + user_id + ", user_firstname=" + user_firstname + ", user_lastname=" + user_lastname
 				+ ", user_email=" + user_email + ", user_contact=" + user_contact + ", user_address=" + user_address
-				+ ", user_password=" + user_password + "]";
+				+ ", user_password=" + user_password + ", user_status=" + user_status + "]";
 	}
 
 

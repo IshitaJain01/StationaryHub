@@ -19,56 +19,54 @@ import com.inventory.model.User;
  * Servlet implementation class UserSignup
  */
 @WebServlet("/Sign-up")
-public class UserSignup extends HttpServlet {
+public class UserSignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		try (PrintWriter out = response.getWriter()){
+		try (PrintWriter out = response.getWriter()) {
 			String fname = request.getParameter("fname");
 			String lname = request.getParameter("lname");
 			String email = request.getParameter("email");
-			long phnumber =Long.decode(request.getParameter("phnumber")).longValue();
+			long phnumber = Long.decode(request.getParameter("phnumber")).longValue();
 			String address = request.getParameter("address");
-            String password = request.getParameter("password");
+			String password = request.getParameter("password");
+			int otp = Integer.parseInt(request.getParameter("otp"));
+			int num = SendEmail.num;
+			String check = num + "";
+
 			out.print(fname);
-			User user=new User(fname, lname, email, phnumber, address, password);
+			User user = new User(fname, lname, email, phnumber, address, password,"Active");
 			UserDao udao = new UserDao();
-			boolean inserted= udao.userSignup(user);
-			out.print(lname);
-			out.print(inserted);
-			
-			if(inserted)
-			{
+			boolean inserted=false;
+			if (num == otp) {
+				inserted = udao.userSignup(user);
+			}
+			if (inserted) {
 				HttpSession httpSession = request.getSession();
 				httpSession.setAttribute("message", "Signup Successfull");
 				response.sendRedirect("login.jsp");
-			}else {
+			} else {
 				out.print("Not inserted");
 			}
-	} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
-
 }
-}
-
-
-	
-
-	
-	
