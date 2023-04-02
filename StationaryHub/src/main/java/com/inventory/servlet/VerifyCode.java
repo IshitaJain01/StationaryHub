@@ -25,8 +25,9 @@ public class VerifyCode extends HttpServlet {
 			String code = request.getParameter("authcode");
 			if(ucode.equals(code)) {
 				out.print("verification done");
+				 response.sendRedirect("login.jsp");
 			}else {
-				out.print("incorrect OTP");
+				 response.sendRedirect("login.jsp");
 			}
 	}
 

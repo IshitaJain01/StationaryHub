@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href=".//stylesheets//index.css" />
 
-    <title>YourChoice</title>
+    <title>The Stationary Hub</title>
   </head>
   <body class="flexCenter">
     <i class="on-off fa-solid fa-toggle-off"></i>
